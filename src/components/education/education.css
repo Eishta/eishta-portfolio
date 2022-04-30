@@ -1,0 +1,31 @@
+.edu__container{
+    border: 2rem solid transparent;
+    background: var(--color-bg-variant);
+    box-shadow: 0 1px 5px var(--color-primary);
+}
+
+.edu{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 3rem;
+    border-bottom: 1px solid var(--color-primary);
+    padding: 1.5rem;
+}
+
+.edu:last-child{
+    border: 0px;
+}
+
+.college h5{
+    color: var(--color-primary);
+}
+.edu small{
+    background: var(--color-primary-variant);
+}
+
+@media screen and (max-width: 600px) {
+    .edu{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}

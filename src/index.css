@@ -1,13 +1,175 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+    --color-white: #fff;
+    --color-light: rgba(255,255,2555,0.6);
+
+    --transition: all 0.4s linear;
+
+    --container-width-lg: 75%;
+    --container-width-md: 86%;
+    --container-width-sm: 90%;
+
+}
+.themes{
+    background: var(--color-bg);
+    background-image: url(../src/assets/bg-texture.png);
+}
+.blue {
+
+    --color-bg: #1f1f38;
+    --color-bg-variant: #2c2c6c;
+    --color-primary: #4db5ff;
+    --color-primary-variant: rgba(77,181,255,0.4);
+    /* position: relative; */
+}
+.yellow{
+    --color-bg: #373747;
+    --color-bg-variant: #53535f;
+    --color-primary: #a19c26;
+    --color-primary-variant: #a19c26de;
+}
+.pink{
+    --color-bg: #161115;
+    --color-bg-variant: #692c6cc2;
+    --color-primary: #b62e85d4;
+    --color-primary-variant: #a915747d;
+}
+.green{
+    --color-bg: #181d19;
+    --color-bg-variant: #16662075;
+    --color-primary: #1e8734;
+    --color-primary-variant: #1e87347d;
+}
+.red{
+    --color-bg: #381f25;
+    --color-bg-variant: #8f2c4480;
+    --color-primary: #ca5f5fa3;
+    --color-primary-variant: #d67272db;
+}
+.orange{
+    --color-bg: #191614f0;;
+    --color-bg-variant: #643b1ad9;
+    --color-primary: #ad440ecf;
+    --color-primary-variant: rgb(167 92 27 / 79%);
+}
+html{
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    
+    color: var(--color-white);
+    line-height: 1.7;
+    background-image: url(../src/assets/bg-texture.png);
+}
+
+/* ============= General Styles ================ */
+
+.container{
+    width: var(--container-width-lg);
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 500;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+section{
+    margin-top: 8rem;
+    padding-top: 2rem;
+}
+
+section > h2, section > h5 {
+    text-align: center;
+    color: var(--color-light);
+}
+
+section > h2{
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+}
+
+.text-light{
+    color: var(--color-light);
+}
+
+a{
+    color: var(--color-primary);
+    transition: var(--transition);
+}
+
+a:hover{
+    color: var(--color-white);
+}   
+
+.btn{
+    width: max-content;
+    display: inline-block;
+    color: var(--color-primary);
+    padding: 0.75rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid var(--color-primary);
+
+}
+
+.btn:hover{
+    background: var(--color-white);
+    color: var(--color-bg);
+    border-color: transparent;
+}
+
+.btn-primary{
+    background: var(--color-primary);
+    color: var(--color-bg);
+}
+
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* =============Media Queries (Medium devices)=================== */
+@media screen and (max-width: 1024px){
+    .container{
+        width: var(--container-width-md);
+    }
+    section{
+        margin-top: 6rem;
+    }
+}
+
+
+/* =============Media Queries (Small devices)=================== */
+@media screen and (max-width: 600px){
+    .container{
+        width: var(--container-width-sm);
+    }
+    section>h2{
+        margin-bottom: 2rem;
+    }
 }
