@@ -9,15 +9,16 @@ const ThemePicker = () => {
     const currentTheme = useSelector(state => state.detail.theme)
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const handleClick = () => {
+    const handleExpanding = () => {
         setIsExpanded(!isExpanded);
     }
     let themes = ['pink', 'red', 'green', 'yellow', 'orange', 'blue']
     return (
         <div
             className={isExpanded ? "theme-picker expand" : "theme-picker"}
-            onMouseEnter={handleClick}
-            onMouseLeave={handleClick}
+            onMouseEnter={handleExpanding}
+            onMouseLeave={handleExpanding}
+            onClick={handleExpanding}
         >
             <div className="theme trans" ></div>
             {themes.map((theme,i) => <div key={i} className={currentTheme === theme ? `theme active  ${theme}` : `theme ${theme}`} onClick={() => dispatch(setTheme(theme))}></div>)}

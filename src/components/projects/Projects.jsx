@@ -4,7 +4,7 @@ import './projects.css';
 
 
 const Projects = () => {
-  const [filter, setFilter] = useState('isDsa');
+  const [filter, setFilter] = useState('all');
   const [filters, setFilters] = useState([{filter: 'all', name: 'All' }, {filter: 'isDsa', name: 'DSA' }, {filter: 'isFront', name: 'Frontend' }, {filter: 'isBackend', name: 'Backend' }])
   return (
     <section className='projects'>
@@ -12,6 +12,7 @@ const Projects = () => {
       <h5>Lorem ipsum dolor sit amet.</h5>
       <div className="filters">
         {filters.map((fil,i)=> <div key={i} className={fil.filter === filter ? 'filter active' : 'filter'} onClick={()=> setFilter(fil.filter)}>{fil.name}</div>)}
+        
       </div>
       <AllProjects filterProp={filter} />
     </section>

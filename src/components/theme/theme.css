@@ -61,9 +61,6 @@
         border-radius: 1rem;
         border-width: 0.3rem;
         flex-direction: row-reverse;
-        /* display: flex;
-        flex-direction: row; */
-        /* flex-direction: column; */
         gap: 0.3rem;
     }
     .expand{
@@ -79,5 +76,13 @@
 @media screen and (max-width: 900px) {
     .theme-picker{
         right: 5rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .theme-picker{
+        right: 1rem;
+        height: fit-content;
+        width: 2.4rem;
+        flex-direction: column;
     }
 }
