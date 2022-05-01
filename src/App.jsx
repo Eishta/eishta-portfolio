@@ -12,12 +12,14 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect
 } from "react-router-dom";
 
 const App = () => {
   const theme = useSelector(state=> state.detail.theme)
   const disptach = useDispatch();
   const getInfo = bindActionCreators(getuserInfo, disptach);
+
   useEffect(() => {
     getInfo();
   }, [])
@@ -28,6 +30,9 @@ const App = () => {
         <Switch>
           <Route path="/" exact>
             <Layout />
+          </Route>
+          <Route path='/portfolio'>
+            <Redirect to="/"/>
           </Route>
           <Route path="/projects">
             <Projects />
