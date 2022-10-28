@@ -1,7 +1,7 @@
 .container.projects__container{
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-bottom: 8rem;
     width: 70%;
@@ -16,39 +16,34 @@
     margin-bottom: 0;
 }
 .project{
-    background: var(--color-bg-variant);
-    border-radius: 2rem;
-    border: 1px solid transparent;
-    transition: var(--transition);
-    position: relative;
-    aspect-ratio: 1/1;
+    box-shadow: 0 1px 25px var(--color-primary-variant);
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    border-radius: 14px;
     overflow: hidden;
 }
 
 .project__image{
-    height: 100%;
     width: 100%;
     object-fit: cover;
 }
 .project__content{
     height: 100%;
     width: 100%;
-    position: absolute;
+    display: flex;
+    padding: 1rem;
     left: 0;
     top: 78%;
-    background: rgba(255, 255, 255, 0.8);
+    background: white;
     transition: var(--transition);
+    flex-direction: column;
+    align-items: center;
 }
-.project:hover .project__content{
-    top: 15%;
-}
-.project:hover .project__tag{
-    opacity: 1;
-}
+
 .project__tag{
     display: grid;
     place-items: center;
-    background: var(--color-primary);
     padding: 0.5rem;
     opacity: 0.8;
     color: var(--color-bg);
@@ -63,12 +58,16 @@
 }
 .btns{
     display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
-    font-size: 0.7rem;
+    flex-direction: column;
+   gap: 1rem;
+    font-size:1rem;
+    width: 100%;
 }
 .btns .btn{
-    padding: 0.5rem;
+    padding: 0.25rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 1px 25px var(--color-primary-variant);
 }
 .filters{
     display: grid;
