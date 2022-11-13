@@ -32,12 +32,13 @@
 }
 .author-image{
     border-radius: 50%;
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
     position: absolute;
     bottom: 0;
     transform: translateY(50%);
     margin-left: 1rem;
+    background: var(--color-primary-variant);
     border: 3px solid var(--color-primary-variant);
     box-shadow: 0 0 0 0.125rem var(--color-primary-variant), 0 0.1875rem 0.4375rem var(--color-primary-variant);
 }

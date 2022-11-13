@@ -23,7 +23,7 @@ const Layout = () => {
             <Skills />
             <Education/>
             <Experience />
-            <Services />
+            {/* <Services /> */}
             <Portfolio />
             <Blogs/>
             <Testimonials />
