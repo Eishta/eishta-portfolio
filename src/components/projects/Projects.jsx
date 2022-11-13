@@ -5,7 +5,7 @@ import './projects.css';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
-  const [filters, setFilters] = useState([{filter: 'all', name: 'All' }, {filter: 'interview', name: 'Interview Guide' }, {filter: 'javascript', name: 'Javascript' }, {filter: 'react', name: 'React' }])
+  const [filters, setFilters] = useState([{filter: 'all', name: 'All' }, {filter: 'interview', name: 'Interview' }, {filter: 'javascript', name: 'Javascript' }, {filter: 'react', name: 'React' }])
   return (
     <section className='projects'>
       <h2>Projects</h2>

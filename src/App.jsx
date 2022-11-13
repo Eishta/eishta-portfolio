@@ -31,9 +31,9 @@ const App = () => {
           <Route path="/" exact>
             <Layout />
           </Route>
-          <Route path='/portfolio'>
+          {/* <Route path='/portfolio'>
             <Redirect to="/"/>
-          </Route>
+          </Route> */}
           <Route path="/projects">
             <Projects />
           </Route>

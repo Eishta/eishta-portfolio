@@ -93,20 +93,21 @@
 /* =============Media Queries (Medium devices)=================== */
 @media screen and (max-width: 1024px){
     .container.projects__container{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 
 /* =============Media Queries (Small devices)=================== */
-@media screen and (max-width: 600px){
+@media screen and (max-width: 700px){
     .container.projects__container{
         grid-template-columns: 1fr;
         gap: 1rem;
     }
     .project__content {
         top: 0%;
-        background: rgba(0, 0, 0, 0.6);
+        background: white;
+        /* background: rgba(0, 0, 0, 0.6); */
     }
     .project:hover .project__content{
         top: 0;
@@ -118,7 +119,7 @@
     .project__desc p{
         display: block;
         font-size: 0.7rem;
-        color: white;
+        /* color: white; */
     }
     .btns{
         flex-direction: column;
