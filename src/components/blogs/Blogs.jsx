@@ -3,19 +3,22 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getblogs } from '../../redux/actions/actions';
 import './blogs.css';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 const Blogs = () => {
   const dispatch = useDispatch();
   const blogs = useSelector(state => state.detail?.blogs || []);
+  // const items = blogs && blogs.items && blogs.items.length > 0 ? blogs.items.slice(0,6) : []
   useEffect(() => {
     dispatch(getblogs())
   }, [])
+  console.log(blogs)
   return (
     <section id='blogs'>
       <h5>My Content</h5>
       <h2>Blogs</h2>
       <div className="container blogs__container">
-        {blogs.items && blogs?.items.map(blog => <a className='blog' href={blog.link} target='_blank' key={blog.guid}>
+        {blogs.items && blogs?.items.slice(0, 6).map(blog => <a className='blog' href={blog.link} target='_blank' key={blog.guid}>
           <div className='thumbnail' style={{ backgroundImage: `url(${blog.thumbnail})` }}>
             <img src={blogs.image} alt="author-image" className="author-image" />
           </div>
@@ -26,6 +29,7 @@ const Blogs = () => {
           </div>
         </a>)}
       </div>
+      <a href='https://medium.com/@eishta' className='portfolio__show-more' target='_blank'>Show more...</a>
     </section>
   )
 }

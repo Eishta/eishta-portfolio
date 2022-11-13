@@ -2,9 +2,9 @@ import React from 'react'
 import './testimonials.css';
 import { useSelector } from 'react-redux';
 
-import {  Pagination } from 'swiper';
+import {  Pagination , Autoplay} from 'swiper';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide   } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -13,10 +13,14 @@ const Testimonials = () => {
   const testimonials = useSelector(state => state.detail?.testimonials || [])
   return (
     <section id='testimonials'>
-      <h5>Review Fro Clients</h5>
+      <h5>Review From Clients</h5>
       <h2>Testimonials</h2>
       <Swiper className="container testimonials__container"
-       modules={[Pagination]}
+       modules={[Pagination, Autoplay]}
+       autoplay={{
+        delay: 2000,
+        disableOnInteraction: false,
+      }}
        spaceBetween={40}
        slidesPerView={1}
        pagination={{ clickable: true }}
