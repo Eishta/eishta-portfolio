@@ -1,23 +1,26 @@
-import React from 'react'
-import './skills.css';
-import { BsPatchCheckFill } from 'react-icons/bs'
-import { useSelector } from 'react-redux';
+import React from "react";
+import "./skills.css";
+import { BsPatchCheckFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const SkillContent = ({ skills }) => {
-  return <div className="skills__content">
-    {skills.map((skill, i) => <article className='skills__details'>
-      <BsPatchCheckFill className="skills__icon" />
-      <div>
-        <h4>{skill}</h4>
-        <small className='text-light'>skills</small>
-      </div>
-    </article>)}
-  </div>
-}
-
+  return (
+    <div className="skills__content">
+      {skills.map((skill, i) => (
+        <article className="skills__details">
+          <BsPatchCheckFill className="skills__icon" />
+          <div>
+            <h4>{skill}</h4>
+            {/* <small className='text-light'>skills</small> */}
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+};
 
 const Skills = () => {
-  const skills = useSelector(state => state.detail?.skills || {});
+  const skills = useSelector((state) => state.detail?.skills || {});
   return (
     <section id="skills">
       <h5>What skills I have</h5>
@@ -33,7 +36,7 @@ const Skills = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;

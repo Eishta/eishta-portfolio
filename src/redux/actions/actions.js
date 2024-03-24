@@ -1,21 +1,29 @@
 import portfolioApi from "../../api/portfolioApi";
-const RECIEVE_USER_INFO = 'RECIEVE_USER_INFO';
+import actionTypes from "./actionTypes";
 
-const SET_THEME = "SET_THEME";
+const getApi = (key) => {
+  return portfolioApi.get(`api/${key}`);
+};
 
-const SET_BLOGS = 'SET_BLOGS';
-
-export default () => {
-    return dispatch => {
-        portfolioApi.get('/api/getUserDetails').then(res => dispatch({ type: RECIEVE_USER_INFO, payload: res.data?.detail }));
-    }
+export function getUserInfo() {
+  return (dispatch) => {
+    getApi("getUserDetails").then((res) =>
+      dispatch({
+        type: actionTypes.RECIEVE_USER_INFO,
+        data: res.data,
+      })
+    );
+  };
 }
 
-export function getblogs(){
-    return dispatch=> {
-        portfolioApi.get('/api/getBlogs').then(res => dispatch({type: SET_BLOGS, blogs: res.data}))
-    }
+export function getBlogs() {
+  return (dispatch) => {
+    getApi("getBlogs").then((res) =>
+      dispatch({ type: actionTypes.SET_BLOGS, data: res.data })
+    );
+  };
 }
+
 export function setTheme(theme) {
-    return dispatch => dispatch({ type: SET_THEME, theme })
-} 
+  return (dispatch) => dispatch({ type: actionTypes.SET_THEME, theme });
+}

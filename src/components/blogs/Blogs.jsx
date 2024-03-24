@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { getblogs } from '../../redux/actions/actions';
+import { getBlogs } from '../../redux/actions/actions';
 import './blogs.css';
 import moment from 'moment';
-import { Link } from 'react-router-dom';
 
 const Blogs = () => {
   const dispatch = useDispatch();
   const blogs = useSelector(state => state.detail?.blogs || []);
   // const items = blogs && blogs.items && blogs.items.length > 0 ? blogs.items.slice(0,6) : []
   useEffect(() => {
-    dispatch(getblogs())
+    dispatch(getBlogs())
   }, [])
   console.log(blogs)
   return (

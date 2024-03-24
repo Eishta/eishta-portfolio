@@ -1,0 +1,15 @@
+const RECIEVE_USER_INFO = "RECIEVE_USER_INFO";
+
+const SET_THEME = "SET_THEME";
+
+const SET_BLOGS = "SET_BLOGS";
+
+
+
+
+export default {
+  RECIEVE_USER_INFO,
+  SET_BLOGS,
+  SET_THEME,
+
+};
